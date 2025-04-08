@@ -1,11 +1,16 @@
 :root {
     --gemstone-red: #c83236;
     --gemstone-beige: #fff8eb;
+    --primary-red: #9a2626;
+    --secondary-red: #7a1f1f;
+    --primary-beige: #f5f0e6;
+    --secondary-beige: #e8e0d0;
+    --text-dark: #333333;
 }
 
 body {
     font-family: 'Lora', serif;
-    background-color: var(--gemstone-beige);
+
 }
 
 .navbar {
@@ -69,6 +74,7 @@ body {
 
 .contact-btn:hover {
     transform: translateY(-3px);
+    color: white;
     box-shadow: 0 4px 12px rgba(200, 50, 54, 0.3);
 }
 
@@ -124,5 +130,129 @@ body {
     
     .navbar-nav .nav-link {
         padding: 10px 0;
+    }
+}
+
+/* About SECTION CSS */
+    
+.about-hero {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 6rem 0;
+    position: relative;
+}
+
+
+
+
+.section-title {
+    position: relative;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-red);
+}
+
+.about-content {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.stats-section {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 4rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.values-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.value-card {
+    background-color: var(--primary-beige);
+    padding: 2rem;
+    border-radius: 10px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    background-color: var(--primary-red);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-custom {
+    background-color: var(--primary-red);
+    border: none;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--secondary-red);
+    color: white;
+}
+
+.cta-section {
+    background-color: var(--primary-beige);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
+    
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .stat-item {
+        margin-bottom: 2rem;
     }
 }
