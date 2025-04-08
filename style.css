@@ -255,4 +255,300 @@ body {
     .stat-item {
         margin-bottom: 2rem;
     }
+
+/* =================================bannerslider================================================================== */
+
+.banner-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 843px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.dots-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .banner-slider {
+      height: 500px;
+  }
+}
+
+@media (max-width: 786px) {
+  .banner-slider {
+      height: 400px;
+  }
+  .dot {
+      width: 12px;
+      height: 12px;
+  }
+}
+
+@media (max-width: 568px) {
+  .banner-slider {
+      height: 300px;
+  }
+  .dots-container {
+      bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-slider {
+      height: 250px;
+  }
+  .dot {
+      width: 10px;
+      height: 10px;
+  }
+  .dots-container {
+      bottom: 10px;
+      gap: 8px;
+  }
+}
+
+
+/* =================================bannerslider================================================================== */
+
+.banner-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 843px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.dots-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .banner-slider {
+      height: 500px;
+  }
+}
+
+@media (max-width: 786px) {
+  .banner-slider {
+      height: 400px;
+  }
+  .dot {
+      width: 12px;
+      height: 12px;
+  }
+}
+
+@media (max-width: 568px) {
+  .banner-slider {
+      height: 300px;
+  }
+  .dots-container {
+      bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-slider {
+      height: 250px;
+  }
+  .dot {
+      width: 10px;
+      height: 10px;
+  }
+  .dots-container {
+      bottom: 10px;
+      gap: 8px;
+  }
+}
+
+/* About SECTION CSS */
+    
+.about-hero {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 6rem 0;
+    position: relative;
+}
+
+
+
+
+.section-title {
+    position: relative;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-red);
+}
+
+.about-content {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.stats-section {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 4rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.values-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.value-card {
+    background-color: var(--primary-beige);
+    padding: 2rem;
+    border-radius: 10px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    background-color: var(--primary-red);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-custom {
+    background-color: var(--primary-red);
+    border: none;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--secondary-red);
+    color: white;
+}
+
+.cta-section {
+    background-color: var(--primary-beige);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
+    
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .stat-item {
+        margin-bottom: 2rem;
+    }
 }
