@@ -88,3 +88,85 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+
+
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; // lower is faster
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+
+                    // Append suffix if needed
+                    if (target >= 1000) counter.innerText += '+';
+                    if (target === 98) counter.innerText += '%';
+                    if (target === 20 || target === 50) counter.innerText += '+';
+                }
+            };
+
+            updateCount();
+        });
+    };
+
+    // Trigger when section is in view (optional)
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const statsSection = document.querySelector('.stats-section');
+    observer.observe(statsSection);
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .contact-btn');
+        
+        // Add click event listener to each link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the target section id from the href attribute
+                const targetId = this.getAttribute('href');
+                
+                // Check if the href is a section ID (starts with #)
+                if (targetId.startsWith('#') && targetId.length > 1) {
+                    const targetSection = document.querySelector(targetId);
+                    
+                    // If target section exists, scroll to it
+                    if (targetSection) {
+                        // Close mobile menu if it's open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarCollapse.classList.remove('show');
+                        }
+                        
+                        // Smooth scroll to target section
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Offset for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    });
